@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Map View 地图视图应用
 
-## Getting Started
+这是一个基于 Next.js 开发的地图视图应用，集成了高德地图服务。
 
-First, run the development server:
+## 环境配置
+
+1. 克隆项目后，首先复制环境变量模板文件：
+
+```bash
+cp .env.example .env
+```
+
+2. 在 `.env` 文件中配置高德地图 API Key：
+
+```bash
+NEXT_PUBLIC_AMAP_KEY=你的高德地图API Key
+```
+
+> 注意：如果没有配置 API Key，应用仍然可以运行，但地图相关功能将无法正常使用。
+
+## 开发说明
+
+1. 安装依赖：
+
+```bash
+npm install
+# 或
+yarn install
+# 或
+pnpm install
+```
+
+2. 启动开发服务器：
 
 ```bash
 npm run dev
-# or
+# 或
 yarn dev
-# or
+# 或
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 技术栈
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js
+- TypeScript
+- 高德地图 Web 服务 API
 
-## Learn More
+## 主要功能
 
-To learn more about Next.js, take a look at the following resources:
+- 地理编码：支持地址搜索并返回经纬度信息
+- 更多功能开发中...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 项目结构
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  ├── utils/
+  │   └── geocodeUtils.ts  # 地理编码工具函数
+  └── ...
 
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
