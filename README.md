@@ -2,6 +2,10 @@
 
 这是一个基于 Next.js 开发的地图视图应用，集成了高德地图服务。
 
+🌐 [在线演示](https://map-view-rosy.vercel.app/)  [![Vercel](https://img.shields.io/badge/Vercel-部署成功-success)](https://map-view-rosy.vercel.app/)
+
+![预览图](./public/233548.png)
+
 ## 环境配置
 
 1. 克隆项目后，首先复制环境变量模板文件：
@@ -66,4 +70,3 @@ src/
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
