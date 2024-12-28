@@ -20,6 +20,10 @@ interface MapProps {
   onLocationSelect?: (lat: number, lng: number) => void;
 }
 
+interface LeafletContainer extends Element {
+  __leaflet_map?: L.Map;
+}
+
 // 自定义组件来更新地图中心
 function UpdateMapCenter({ position }: MapProps) {
   const map = useMap();
@@ -56,8 +60,6 @@ export default function MapComponent({ position, onLocationSelect }: MapProps) {
       touchZoom={true}
       scrollWheelZoom={true}
       doubleClickZoom={true}
-      tap={true}
-      tapTimeout={200}
     >
       <TileLayer
         attribution='&copy; <a href="https://amap.com">高德地图</a>'
@@ -90,7 +92,7 @@ export default function MapComponent({ position, onLocationSelect }: MapProps) {
             aria-disabled="false"
             onClick={(e) => {
               e.preventDefault();
-              const map = document.querySelector('.leaflet-container')?.__leaflet_map;
+              const map = (document.querySelector('.leaflet-container') as LeafletContainer)?.__leaflet_map;
               if (map) map.zoomIn();
             }}
           >+</a>
@@ -103,7 +105,7 @@ export default function MapComponent({ position, onLocationSelect }: MapProps) {
             aria-disabled="false"
             onClick={(e) => {
               e.preventDefault();
-              const map = document.querySelector('.leaflet-container')?.__leaflet_map;
+              const map = (document.querySelector('.leaflet-container') as LeafletContainer)?.__leaflet_map;
               if (map) map.zoomOut();
             }}
           >-</a>

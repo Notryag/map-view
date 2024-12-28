@@ -172,7 +172,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="mt-2 text-sm text-gray-500">
-                    请按照"经度, 纬度"的格式输入坐标，或直接点击地图选择位置
+                    请按照&quot;经度, 纬度&quot;的格式输入坐标，或直接点击地图选择位置
                   </p>
                 </div>
                 

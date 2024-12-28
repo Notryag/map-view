@@ -1,18 +1,13 @@
 import gcoord from 'gcoord';
 
 // 定义常用的坐标系
-const projections = {
-  'WGS84': '+proj=longlat +datum=WGS84 +no_defs',
-  'GCJ02': '+proj=longlat +datum=GCJ02',
-  'BD09': '+proj=longlat +datum=BD09',
-};
 
 export interface Coordinate {
   lat: number;
   lng: number;
 }
 
-export type CoordinateSystem = keyof typeof projections;
+export type CoordinateSystem = keyof typeof COORD_SYSTEM_MAP;
 
 const COORD_SYSTEM_MAP = {
   'WGS84': gcoord.WGS84,

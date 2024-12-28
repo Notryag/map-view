@@ -14,6 +14,11 @@ export interface GeocodingResult {
   formatted_address: string;
 }
 
+interface AmapGeocode {
+  location: string;
+  formatted_address: string;
+}
+
 export async function searchAddress(address: string): Promise<GeocodingResult[]> {
   try {
     const response = await fetch(
@@ -32,7 +37,7 @@ export async function searchAddress(address: string): Promise<GeocodingResult[]>
       throw new Error(data.info || '地理编码失败');
     }
 
-    return data.geocodes.map((item: any) => {
+    return data.geocodes.map((item: AmapGeocode) => {
       const [lng, lat] = item.location.split(',').map(Number);
       return {
         location: { lat, lng },
